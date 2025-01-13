@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".CameraActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/server_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#00ff00"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="开始连接"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/live_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#00ff00"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/server_info"
+        tools:text="直播中..."
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/ext_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#00ff00"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/live_info"
+        tools:text="0"
+        >
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/preview_fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#40ff00"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/ext_info"
+        tools:text="fps : 30"
+        >
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/buffer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#40ff00"
+        android:text="buffer: --"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/preview_fps"
+        tools:text="buffer: 90 %"
+        >
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/write_buffer_kbps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#40ff00"
+        android:text="write buffer: --"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/buffer"
+        tools:text="write buffer: 220 kps"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/upload_kbps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#40ff00"
+        android:text="upload: --"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/write_buffer_kbps"
+        tools:text="upload: 200 kps"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/bytes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#40ff00"
+        android:text="bytes: --"
+        app:layout_constraintLeft_toLeftOf="@+id/server_info"
+        app:layout_constraintTop_toBottomOf="@+id/upload_kbps"
+        tools:text="bytes: 1022 kb"
+        >
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

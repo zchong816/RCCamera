@@ -1,0 +1,55 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven{ url 'https://maven.aliyun.com/repository/public'}
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/google'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin'
+            allowInsecureProtocol = true
+        }
+        maven { url  'https://repo1.maven.org/maven2/'}
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+
+        maven {
+            url 'https://artifact.bytedance.com/repository/AwemeOpenSDK'
+        }
+        maven {
+            url 'https://artifact.byted.org/repository/pangle/'
+        }
+        maven {
+            url 'https://artifact.bytedance.com/repository/Volcengine/'
+        }
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven{ url 'https://maven.aliyun.com/repository/public'}
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/google'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin'
+            allowInsecureProtocol = true
+        }
+        maven { url  'https://repo1.maven.org/maven2/'}
+    }
+}
+enableFeaturePreview('VERSION_CATALOGS')
+rootProject.name = "RCLive"
+include ':peripheral'
+include ':central'
+include ':common'

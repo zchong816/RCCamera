@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="base_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="font_2" parent="base_textview">
+        <item name="android:textSize">@dimen/dimens_16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="font_4_no_bold" parent="base_textview">
+        <item name="android:textSize">@dimen/dimens_15dp</item>
+        <item name="android:textColor">@color/white_80</item>
+    </style>
+    <style name="font_5" parent="base_textview">
+        <item name="android:textSize">@dimen/dimens_14dp</item>
+        <item name="android:textColor">@color/white_80</item>
+    </style>
+    <style name="font_6" parent="base_textview">
+        <item name="android:textSize">@dimen/dimens_10dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_7" parent="base_textview">
+        <item name="android:textSize">@dimen/dimens_8dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--自定义Dialog样式-->
+    <style name="setting_dialog" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>

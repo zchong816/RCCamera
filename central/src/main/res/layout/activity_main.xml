@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        app:aspectRatioMode="adjust"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Brandwidth Info"
+        android:textColor="#ff0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView" />
+
+
+
+    <TextView
+        android:id="@+id/speed_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#ff00ff"
+        android:textSize="22dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        tools:text="Hello World"
+        />
+
+
+    <TextView
+        android:id="@+id/speed_current_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#00ffff"
+        android:textSize="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed_info"
+        tools:text="Hello World"
+        />
+
+    <ImageView
+        android:id="@+id/voice"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:tint="#ffffff"
+        app:layout_constraintRight_toRightOf="@+id/surfaceView"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceView"
+        tools:background="#ff00ff"
+        >
+    </ImageView>
+
+
+
+    <Button
+        android:id="@+id/live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一键开播"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/preview"
+        />
+
+    <Button
+        android:id="@+id/offlive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下播"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/live"
+        app:layout_constraintTop_toTopOf="@+id/live"
+        />
+
+    <Button
+        android:id="@+id/douyinlive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取抖音开播地址"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/offlive"
+        app:layout_constraintTop_toTopOf="@+id/live"
+        />
+
+
+
+    <Button
+        android:id="@+id/preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拉取外设音视频"
+        android:layout_marginTop="20dp"
+        android:enabled="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/disconnect"
+        />
+
+    <Button
+        android:id="@+id/bandwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="外设带宽测试"
+        android:layout_marginLeft="20dp"
+        android:enabled="true"
+        app:layout_constraintLeft_toRightOf="@+id/preview"
+        app:layout_constraintBottom_toTopOf="@+id/disconnect"
+        />
+
+
+    <Button
+        android:id="@+id/disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="断开蓝牙连接"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
