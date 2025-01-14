@@ -3,15 +3,9 @@ package net.vicp.zchong.live.central.client.spp
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothSocket
 import android.content.Context
-import android.os.SystemClock
 import android.util.Log
-import net.vicp.zchong.live.central.client.AbstractReceiver
 import net.vicp.zchong.live.central.client.AbstractSocketReceiver
-import net.vicp.zchong.live.central.client.FillBlockingQueue
-import net.vicp.zchong.live.central.client.FillBufferedInputStream
-import net.vicp.zchong.live.central.client.IFill
 import net.vicp.zchong.live.common.SppUUIDS
-import java.io.BufferedInputStream
 import java.io.IOException
 import java.io.InputStream
 
@@ -26,7 +20,7 @@ class SppReceiver(context: Context, isStreamMode: Boolean) :
     private var socket: BluetoothSocket? = null
     override fun getInputStream(): InputStream? {
         try {
-            socket = device?.createInsecureRfcommSocketToServiceRecord(SppUUIDS.CONNECT_UUID)
+            socket = btDevice?.createInsecureRfcommSocketToServiceRecord(SppUUIDS.CONNECT_UUID)
             socket!!.connect()
             return socket!!.getInputStream()
         } catch (t: Throwable) {

@@ -192,7 +192,7 @@ class GattClient(context: Context) : AbstractClient(context) {
                 }
             }
         }
-        receiver?.setDeivce(device)
+        receiver?.setDevice(device)
         receiver?.createReceiverBuffer()
     }
 

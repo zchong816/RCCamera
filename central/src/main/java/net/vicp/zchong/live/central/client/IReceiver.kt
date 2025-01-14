@@ -13,7 +13,7 @@ interface IReceiver {
     fun startReceiveData()
     fun pushRtmpLiveStream(rtmp: String?, w: Int, h: Int, fps: Int)
     fun createReceiverBuffer(): IFill?
-    fun setDeivce(device: BluetoothDevice?)
+    fun setDevice(device: BluetoothDevice?)
     fun destroy()
     var callback: IReceiverCallback?
     var avCallback: IAVCallback?

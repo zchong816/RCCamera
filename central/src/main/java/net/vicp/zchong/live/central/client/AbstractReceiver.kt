@@ -9,14 +9,12 @@ import android.os.HandlerThread
 import android.os.SystemClock
 import android.util.Log
 import net.vicp.zchong.live.central.IErrorCallback
-import net.vicp.zchong.live.central.av.AacDeCodePlayFromReceiver
 import net.vicp.zchong.live.central.av.Audio
 import net.vicp.zchong.live.central.av.SpsPpsVps
 import net.vicp.zchong.live.central.av.Video
 import net.vicp.zchong.live.central.rtmp.RtmpManager
 import net.vicp.zchong.live.common.AVDataCommandHeader
 import net.vicp.zchong.live.common.BtTrack
-import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
@@ -27,7 +25,7 @@ import java.util.Arrays
  * @date 2024/8/20 00:27
  */
 abstract class AbstractReceiver protected constructor(protected var context: Context) : IReceiver {
-    protected var device: BluetoothDevice? = null
+    protected var btDevice: BluetoothDevice? = null
     protected var buffer: IFill? = null
     protected var fillDataHandler: Handler? = null
     private var fillDataHandlerThread: HandlerThread? = null
@@ -56,8 +54,8 @@ abstract class AbstractReceiver protected constructor(protected var context: Con
         }
     }
 
-    override fun setDeivce(device: BluetoothDevice?) {
-        this.device = device
+    override fun setDevice(device: BluetoothDevice?) {
+        this.btDevice = device
     }
 
     override fun pushRtmpLiveStream(rtmp: String?, w: Int, h: Int, fps: Int) {
