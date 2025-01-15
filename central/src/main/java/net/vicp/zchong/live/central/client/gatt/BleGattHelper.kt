@@ -196,7 +196,7 @@ class BleGattHelper(var mContext: Context, val macAddress: String) {
      * 断开连接，会触发onConnectionStateChange回调，在onConnectionStateChange回调中调用mBluetoothGatt.close()
      */
     fun disConnection() {
-        Log.d(TAG, "disConnection")
+        Log.d(TAG, "disConnection isConnected:$isConnected")
         if (isConnected) {
             isConnected = false
             mBluetoothGatt.disconnect()
@@ -685,7 +685,7 @@ class BleGattHelper(var mContext: Context, val macAddress: String) {
             characteristic: BluetoothGattCharacteristic?, status: Int
         ) {
             super.onCharacteristicWrite(gatt, characteristic, status)
-            Log.d(TAG, "onCharacteristicWrite status:" + status + " uuid:" + characteristic?.uuid)
+            Log.d(TAG, "onCharacteristicWrite status:" + status + " uuid:" + characteristic?.uuid + " " + String(characteristic?.value ?: ByteArray(0)))
         }
 
         var onCharacteristicChangedMs = SystemClock.uptimeMillis()
