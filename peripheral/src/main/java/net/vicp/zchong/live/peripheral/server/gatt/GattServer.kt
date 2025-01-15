@@ -353,10 +353,10 @@ class GattServer {
                             )
                             Log.d(TAG, "onConnectionStateChange 断开连接")
                             this@GattServer.device = null
-                            mBluetoothGattServer?.clearServices()
-                            mBluetoothGattServer?.close()
-                            mBluetoothGattServer = null
-                            addGattServer()
+//                            mBluetoothGattServer?.clearServices()
+//                            mBluetoothGattServer?.close()
+//                            mBluetoothGattServer = null
+//                            addGattServer()
                             sender?.destroy()
                             sender = null
                             serverCallback?.onDisonnect()
@@ -484,7 +484,6 @@ class GattServer {
                             serverCallback?.onConnect(dataConnectType)
                         }
 
-                        //open_camera
                         GattCommand.OPEN_CAMERA -> {
                             Log.d(BtTrack.TAG,"Peripheral receive OPEN_CAMERA $cmdValue")
                             serverCallback?.onOpenCamera(params)
