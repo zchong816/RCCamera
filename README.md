@@ -7,7 +7,7 @@ Meta 的 Ray-Ban 智能眼镜亲身体验：可以直播到 Instagram
 https://www.bilibili.com/video/BV19N4y1Z77d/?spm_id_from=333.337.search-card.all.click
 使用场景
 智能手机作为控制端，可以通过蓝牙发起直命令给智能眼镜，智能眼镜作为外设进行录音录像，并将音视频通过蓝牙回传给智能手机，智能手机将音视频打包封装通过直播协议分发至直播平台。
-Meta Ray-Ban经过调研，控制和影音数据传输均使用蓝牙，直播码率在 600-2000kbps
+Meta Ray-Ban经过调研，控制和影音数据传输均使用蓝牙，直播码率在600-2000kbps
 
 本人在之前服务的公司从事基于Android平台的智能眼镜开发，其中涉及：蓝牙通讯，摄像头录制，推流直播。因此在离职后尝试将Meta Ray-Ban的直播功能在Android平台上实现。
 本项目控制部分仍然使用蓝牙（Gatt）， 影音数据除了蓝牙外增加了 WIFI和 WIFI P2P 的支持，以便实现更高码率的音视频传输。
@@ -32,6 +32,7 @@ https://developer.open-douyin.com/docs/resource/zh-CN/dop/ability/douyin-live-sd
 1. 影音数据协议只定义音频视频数据，是否需要加个版本号方便后续扩展？
 2. 目前不支持iOS端的中心设备，由于iOS不支持经典蓝牙(SPP)，蓝牙BLE数据带宽又不足以支撑音视频传输，因此iOS平台可选的数据传输通道有限: 蓝牙 Gatt Over BR/EDR, WIFI 热点接入
 通过 Android 平台对比经典蓝牙(SPP)和Gatt Over BR/EDR，经典蓝牙在数据传输速率，稳定性，功耗仍然要优于Gatt Over BR/EDR，后续需考虑如何优化 Gatt Over BR/EDR上的数据传输
+3. 目前只能控制蓝牙配对列表中第一个设备，后续需要加上配对管理，可以选择需要控制的配对设备。
 
 # 联系方式
 zchong@msn.com
